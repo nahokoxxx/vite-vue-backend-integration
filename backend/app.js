@@ -7,10 +7,11 @@ const app = express();
 const port = 3000;
 
 const dev = process.env.NODE_ENV === "development";
-const frontendBaseUrl = process.env.FRONTEND_BASE_URL
+const frontendBaseUrl = process.env.FRONTEND_BASE_URL;
 
 if (dev) {
   app.use("/src/assets", proxy(url.parse(`${frontendBaseUrl}/src/assets`)));
+  app.use("/node_modules", proxy(url.parse(`${frontendBaseUrl}/node_modules`)));
 }
 
 app.use(express.static("public"));
@@ -34,7 +35,7 @@ function getDevFiles() {
   return {
     vite: `${frontendBaseUrl}/@vite/client`,
     main: `${frontendBaseUrl}/src/main.js`,
-  }
+  };
 }
 
 function getProdFiles() {
@@ -44,7 +45,7 @@ function getProdFiles() {
 
   const manifest = require("./public/manifest.json");
   if (!manifest) {
-    throw new Error("Build frontend with production mode first.")
+    throw new Error("Build frontend with production mode first.");
   }
   const { css, file: js } = manifest["src/main.js"];
 

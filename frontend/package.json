@@ -9,10 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "@mdi/font": "7.0.96",
+    "roboto-fontface": "*",
+    "vue": "^3.2.45",
+    "vuetify": "^3.0.0",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12"
   }
 }

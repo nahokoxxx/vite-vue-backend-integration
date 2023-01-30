@@ -6,17 +6,20 @@
     <title>Express</title>
   </head>
   <body>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-      <hello-world msg="Message from backend" />
+      <v-app>
+        <v-main>
+          <hello-world msg="Message from backend" />
+        </v-main>
+      </v-app>
     </div>
     {{ #devFiles }}
-      <script type="module" src="{{ devFiles.vite }}"></script>
-      <script type="module" src="{{ devFiles.main }}"></script>
+    <script type="module" src="{{ devFiles.vite }}"></script>
+    <script type="module" src="{{ devFiles.main }}"></script>
     {{ /devFiles }}
     {{ #prodFiles }}
-      <link rel="stylesheet" href="{{ prodFiles.css }}" />
-      <script type="module" src="{{ prodFiles.js }}"></script>
+    <link rel="stylesheet" href="{{ prodFiles.css }}" />
+    <script type="module" src="{{ prodFiles.js }}"></script>
     {{ /prodFiles }}
   </body>
 </html>
