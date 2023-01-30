@@ -1,0 +1,7 @@
+node_modules
+
+public/assets
+public/manifest.json
+public/vite.svg
+
+.DS_Store
