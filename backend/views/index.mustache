@@ -13,6 +13,11 @@
         </v-main>
       </v-app>
     </div>
+    <script>
+      window.initialSettings = {
+        hello: "{{ hello }}"
+      };
+    </script>
     {{ #devFiles }}
     <script type="module" src="{{ devFiles.vite }}"></script>
     <script type="module" src="{{ devFiles.main }}"></script>

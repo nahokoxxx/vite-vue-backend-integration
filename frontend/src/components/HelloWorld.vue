@@ -59,5 +59,8 @@
 </template>
 
 <script setup>
-//
+import { useSettingsStore } from "../stores/settings";
+
+const store = useSettingsStore();
+console.log(store.hello);
 </script>

@@ -20,7 +20,11 @@ app.set("view engine", "mustache");
 app.engine("mustache", mustacheExpress());
 
 app.get("/", (_req, res) => {
-  res.render("index", { devFiles: getDevFiles(), prodFiles: getProdFiles() });
+  res.render("index", {
+    devFiles: getDevFiles(),
+    prodFiles: getProdFiles(),
+    hello: "world",
+  });
 });
 
 app.listen(port, () => {
